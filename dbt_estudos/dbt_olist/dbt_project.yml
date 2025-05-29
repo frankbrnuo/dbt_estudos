@@ -1,0 +1,18 @@
+name: dbt_olist
+version: '1.0'
+config-version: 2
+
+profile: dbt_olist
+models:
+  dbt_olist:
+    staging:
+      +schema: stg
+      +materialized: table
+    core:
+      +schema: core
+      +materialized: table
+
+seeds:
+  dbt_olist:
+    +schema: raw
+    +materialized: seed
